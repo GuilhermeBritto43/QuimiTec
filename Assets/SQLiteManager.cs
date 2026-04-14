@@ -1,5 +1,5 @@
 using UnityEngine;
-using Mono.Data.Sqlite; // Importante: requer a DLL que você moveu
+using Mono.Data.Sqlite;
 using System.Data;
 using System.IO;
 
@@ -10,12 +10,9 @@ public class SQLiteManager : MonoBehaviour
     void Start()
     {
         string nomeBanco = "QuimiTec.db";
-        // Caminho de leitura (onde o banco vai na instalação)
         string caminhoOrigem = Path.Combine(Application.streamingAssetsPath, nomeBanco);
-        // Caminho de escrita (onde o jogo realmente vai salvar os dados no PC do usuário)
         string caminhoDestino = Path.Combine(Application.persistentDataPath, nomeBanco);
 
-        // Se o arquivo ainda não existe na pasta de salvamento, copia da pasta de instalação
         if (!File.Exists(caminhoDestino))
         {
             File.Copy(caminhoOrigem, caminhoDestino);

@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using Mono.Data.Sqlite;
 using System.Data;
 using System.IO;
@@ -16,12 +17,9 @@ public class SQLiteManager : MonoBehaviour
         File.Copy(caminhoOrigem, caminhoDestino, true);
 
         caminhoDB = "URI=file:" + caminhoDestino;
-
-        CriarDadosExemplo();
-        LerDados();
     }
 
-    public void CriarDadosExemplo()
+    public void ValidarLogin(string email, string senha)
     {
         using (var conexao = new SqliteConnection(caminhoDB))
         {
@@ -29,32 +27,37 @@ public class SQLiteManager : MonoBehaviour
             using (var comando = conexao.CreateCommand())
             {
                 comando.CommandText = @"
-                INSERT INTO Alunos (email, senha)
-                SELECT 'guilherme43@cps.sp.gov.br', '4343'
-                WHERE NOT EXISTS (
-                    SELECT 1 FROM Alunos WHERE email = 'guilherme43@cps.sp.gov.br'
-                );";
+                SELECT COUNT(*) 
+                FROM Usuarios 
+                WHERE email = @email AND senha = @senha;";
 
-                comando.ExecuteNonQuery();
-                Debug.Log("Inserção verificada (sem duplicar).");
-            }
-        }
-    }
+                comando.Parameters.Add(new SqliteParameter("@email", email));
+                comando.Parameters.Add(new SqliteParameter("@senha", senha));
 
-    public void LerDados()
-    {
-        using (var conexao = new SqliteConnection(caminhoDB))
-        {
-            conexao.Open();
-            using (var comando = conexao.CreateCommand())
-            {
-                comando.CommandText = "SELECT * FROM Alunos;";
-                using (IDataReader leitor = comando.ExecuteReader())
+                int resultado = System.Convert.ToInt32(comando.ExecuteScalar());
+
+                if (resultado > 0)
                 {
-                    while (leitor.Read())
+                    Debug.Log("Login válido");
+
+                    if (email.EndsWith("@aluno.cps.sp.gov.br"))
                     {
-                        Debug.Log($"ID: {leitor["id"]} | Email: {leitor["email"]} | Senha: {leitor["senha"]}");
+                        Debug.Log("ALUNO");
+                        SceneManager.LoadScene("TelaJogarEstudar"); 
                     }
+                    else if (email.EndsWith("@cps.sp.gov.br"))
+                    {
+                        Debug.Log("PROFESSOR");
+                        SceneManager.LoadScene("Jogo"); 
+                    }
+                    else
+                    {
+                        Debug.Log("Dominio desconhecido");
+                    }
+                }
+                else
+                {
+                    Debug.Log("Email ou senha inválidos");
                 }
             }
         }

@@ -13,10 +13,7 @@ public class SQLiteManager : MonoBehaviour
         string caminhoOrigem = Path.Combine(Application.streamingAssetsPath, nomeBanco);
         string caminhoDestino = Path.Combine(Application.persistentDataPath, nomeBanco);
 
-        if (!File.Exists(caminhoDestino))
-        {
-            File.Copy(caminhoOrigem, caminhoDestino);
-        }
+        File.Copy(caminhoOrigem, caminhoDestino, true);
 
         caminhoDB = "URI=file:" + caminhoDestino;
 
@@ -31,9 +28,15 @@ public class SQLiteManager : MonoBehaviour
             conexao.Open();
             using (var comando = conexao.CreateCommand())
             {
-                comando.CommandText = "INSERT INTO Alunos (nome) VALUES ('Guilherme4343');";
+                comando.CommandText = @"
+                INSERT INTO Alunos (email, senha)
+                SELECT 'guilherme43@cps.sp.gov.br', '4343'
+                WHERE NOT EXISTS (
+                    SELECT 1 FROM Alunos WHERE email = 'guilherme43@cps.sp.gov.br'
+                );";
+
                 comando.ExecuteNonQuery();
-                Debug.Log("Dados inseridos com sucesso!");
+                Debug.Log("Inserção verificada (sem duplicar).");
             }
         }
     }
@@ -50,7 +53,7 @@ public class SQLiteManager : MonoBehaviour
                 {
                     while (leitor.Read())
                     {
-                        Debug.Log($"ID: {leitor["id"]} | Nome: {leitor["nome"]}");
+                        Debug.Log($"ID: {leitor["id"]} | Email: {leitor["email"]} | Senha: {leitor["senha"]}");
                     }
                 }
             }

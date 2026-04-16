@@ -12,11 +12,14 @@ EditorBuildSettings:
     path: Assets/Telas/tela inicial/TelaLogin.unity
     guid: 80ca3850bcc02bf4dbb74da247fe8819
   - enabled: 1
-    path: Assets/Telas/jogar ou estudar/telajogar.unity
+    path: Assets/Telas/jogar ou estudar/TelaJogarEstudar.unity
     guid: 63d7c3e888a626348898fa17f024b2c2
   - enabled: 1
     path: Assets/Telas/estudar/estudar.unity
     guid: 2e4731f94b071d74085beb8a213e2247
+  - enabled: 1
+    path: Assets/Telas/Jogo/Jogo.unity
+    guid: 967fea7a3e3df284ea4a2b7308d8d91f
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

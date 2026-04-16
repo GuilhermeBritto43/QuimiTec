@@ -6,4 +6,7 @@ public class TelaJogarManager : MonoBehaviour
     public void Estudar(){
         SceneManager.LoadScene("estudar");
     }
+    public void Jogar(){
+        SceneManager.LoadScene("Jogo");
+    }
 }

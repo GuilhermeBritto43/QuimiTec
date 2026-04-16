@@ -33,8 +33,6 @@ A proposta é transformar o processo de aprendizado em uma experiência interati
 
 ## 🛠️ Tecnologias Utilizadas
 
-*(Preencha conforme o que vocês usaram no projeto)*
-
 - Linguagem: C#
 - Ferramentas: Figma, Trello, Github
 - Banco de Dados:  SQLite
@@ -59,20 +57,10 @@ Projeto desenvolvido em parceria com a **ETEC Júlio de Mesquita**, com foco na 
 
 | Nome | RA |
 |------|----|
-| Fouad Khayat Scheidt | 24.10118-0 |
-| Giulia Zaparolli Passiani | 25.00909-3 |
-| Guilherme Britto Tavares dos Santos | 25.01356-6 |
-| Marcos de Salles Prado | 25.00822-8 |
-| Sofia Roschel Gaspar | 25.00209-8 |
+| Fouad Khayat Scheidt
+| Giulia Zaparolli Passiani
+| Guilherme Britto Tavares dos Santos
+| Marcos de Salles Prado
+| Sofia Roschel Gaspar
 
 ---
-
-## 📌 Status do Projeto
-
-🚧 Em desenvolvimento  
-
----
-
-## 📄 Licença
-
-Este projeto é de caráter educacional e pode ser utilizado para fins acadêmicos.

@@ -8,6 +8,15 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
+  - enabled: 1
+    path: Assets/Telas/tela inicial/TelaLogin.unity
+    guid: 80ca3850bcc02bf4dbb74da247fe8819
+  - enabled: 1
+    path: Assets/Telas/jogar ou estudar/telajogar.unity
+    guid: 63d7c3e888a626348898fa17f024b2c2
+  - enabled: 1
+    path: Assets/Telas/estudar/estudar.unity
+    guid: 2e4731f94b071d74085beb8a213e2247
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

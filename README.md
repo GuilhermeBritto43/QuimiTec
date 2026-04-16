@@ -55,8 +55,8 @@ Projeto desenvolvido em parceria com a **ETEC Júlio de Mesquita**, com foco na 
 
 ## 👥 Participantes
 
-| Nome | RA |
-|------|----|
+| Nome 
+|-----
 | Fouad Khayat Scheidt
 | Giulia Zaparolli Passiani
 | Guilherme Britto Tavares dos Santos

@@ -48,7 +48,7 @@ public class SQLiteManager : MonoBehaviour
                     else if (email.EndsWith("@cps.sp.gov.br"))
                     {
                         Debug.Log("PROFESSOR");
-                        SceneManager.LoadScene("Jogo"); 
+                        SceneManager.LoadScene("gerenciarAlunos"); 
                     }
                     else
                     {

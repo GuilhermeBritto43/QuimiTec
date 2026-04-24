@@ -19,6 +19,74 @@ public class SQLiteManager : MonoBehaviour
         caminhoDB = "URI=file:" + caminhoDestino;
     }
 
+    public void AdicionarAluno(string nome, string email, string senha)
+    {
+        using (var conexao = new SqliteConnection(caminhoDB))
+        {
+            conexao.Open();
+            using (var comando = conexao.CreateCommand())
+            {
+                comando.CommandText = @"
+            INSERT INTO Alunos (nome, email, senha)
+            SELECT @nome, @email, @senha
+            WHERE NOT EXISTS (
+                SELECT 1 FROM Alunos WHERE email = @email
+            );";
+
+                comando.Parameters.Add(new SqliteParameter("@nome", nome));
+                comando.Parameters.Add(new SqliteParameter("@email", email));
+                comando.Parameters.Add(new SqliteParameter("@senha", senha));
+
+                int linhas = comando.ExecuteNonQuery();
+
+                if (linhas > 0)
+                    Debug.Log("Aluno cadastrado");
+                else
+                    Debug.Log("Email já existe");
+            }
+        }
+    }
+
+    public void ListarAlunos()
+    {
+        using (var conexao = new SqliteConnection(caminhoDB))
+        {
+            conexao.Open();
+            using (var comando = conexao.CreateCommand())
+            {
+                comando.CommandText = "SELECT * FROM Alunos;";
+
+                using (IDataReader leitor = comando.ExecuteReader())
+                {
+                    while (leitor.Read())
+                    {
+                        Debug.Log($"ID: {leitor["id"]} | Nome: {leitor["nome"]} | Email: {leitor["email"]}");
+                    }
+                }
+            }
+        }
+    }
+
+    public void RemoverAluno(string email)
+    {
+        using (var conexao = new SqliteConnection(caminhoDB))
+        {
+            conexao.Open();
+            using (var comando = conexao.CreateCommand())
+            {
+                comando.CommandText = "DELETE FROM Alunos WHERE email = @email;";
+                comando.Parameters.Add(new SqliteParameter("@email", email));
+
+                int linhas = comando.ExecuteNonQuery();
+
+                if (linhas > 0)
+                    Debug.Log("Aluno removido");
+                else
+                    Debug.Log("Aluno não encontrado");
+            }
+        }
+    }
+
     public void ValidarLogin(string email, string senha)
     {
         using (var conexao = new SqliteConnection(caminhoDB))

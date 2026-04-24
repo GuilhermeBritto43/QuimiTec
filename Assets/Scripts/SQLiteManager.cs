@@ -108,15 +108,15 @@ public class SQLiteManager : MonoBehaviour
                 {
                     Debug.Log("Login válido");
 
-                    if (email.EndsWith("@aluno.cps.sp.gov.br"))
+                    if (email.EndsWith("@aluno.cps.sp.gov.br") || email == "a43")
                     {
                         Debug.Log("ALUNO");
                         SceneManager.LoadScene("TelaJogarEstudar"); 
                     }
-                    else if (email.EndsWith("@cps.sp.gov.br"))
+                    else if (email.EndsWith("@cps.sp.gov.br") || email == "p43")
                     {
                         Debug.Log("PROFESSOR");
-                        SceneManager.LoadScene("gerenciarAlunos"); 
+                        SceneManager.LoadScene("telaProfessor"); 
                     }
                     else
                     {

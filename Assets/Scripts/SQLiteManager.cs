@@ -27,10 +27,10 @@ public class SQLiteManager : MonoBehaviour
             using (var comando = conexao.CreateCommand())
             {
                 comando.CommandText = @"
-            INSERT INTO Alunos (nome, email, senha)
+            INSERT INTO Usuarios (nome, email, senha)
             SELECT @nome, @email, @senha
             WHERE NOT EXISTS (
-                SELECT 1 FROM Alunos WHERE email = @email
+                SELECT 1 FROM Usuarios WHERE email = @email
             );";
 
                 comando.Parameters.Add(new SqliteParameter("@nome", nome));
@@ -54,7 +54,7 @@ public class SQLiteManager : MonoBehaviour
             conexao.Open();
             using (var comando = conexao.CreateCommand())
             {
-                comando.CommandText = "SELECT * FROM Alunos;";
+                comando.CommandText = "SELECT * FROM Usuarios;";
 
                 using (IDataReader leitor = comando.ExecuteReader())
                 {
@@ -74,7 +74,7 @@ public class SQLiteManager : MonoBehaviour
             conexao.Open();
             using (var comando = conexao.CreateCommand())
             {
-                comando.CommandText = "DELETE FROM Alunos WHERE email = @email;";
+                comando.CommandText = "DELETE FROM Usuarios WHERE email = @email;";
                 comando.Parameters.Add(new SqliteParameter("@email", email));
 
                 int linhas = comando.ExecuteNonQuery();

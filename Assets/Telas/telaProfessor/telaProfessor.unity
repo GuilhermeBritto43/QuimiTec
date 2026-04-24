@@ -201,7 +201,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 179940008}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1811726544}
+        m_TargetAssemblyTypeName: TelaProfessor, Assembly-CSharp
+        m_MethodName: OnClickEditar
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &179940008
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1288,6 +1300,50 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!1 &1811726543
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1811726545}
+  - component: {fileID: 1811726544}
+  m_Layer: 0
+  m_Name: TelaProfessor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1811726544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1811726543}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34a750e3f25c99e409d380672074903f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TelaProfessor
+--- !u!4 &1811726545
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1811726543}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 973.37146, y: 544.8266, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1839118942
 GameObject:
   m_ObjectHideFlags: 0
@@ -1449,7 +1505,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1946507723}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1811726544}
+        m_TargetAssemblyTypeName: TelaProfessor, Assembly-CSharp
+        m_MethodName: OnClickGerenciar
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1946507723
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1570,7 +1638,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2066242422}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1811726544}
+        m_TargetAssemblyTypeName: TelaProfessor, Assembly-CSharp
+        m_MethodName: OnClickJogar
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2066242422
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1616,3 +1696,4 @@ SceneRoots:
   - {fileID: 557603733}
   - {fileID: 1496667783}
   - {fileID: 1839118945}
+  - {fileID: 1811726545}

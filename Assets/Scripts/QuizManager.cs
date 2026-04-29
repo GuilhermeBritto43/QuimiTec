@@ -80,14 +80,26 @@ public class QuizManager : MonoBehaviour
                     }
                 }
             }
-            Debug.Log("Qtd alternativas: " + alternativas.Count);
+
             int quantidade = Mathf.Min(botoes.Length, alternativas.Count);
 
             for (int i = 0; i < quantidade; i++)
             {
                 var alt = alternativas[i];
 
+                //Debug.Log("Tentando carregar: " + alt.img);
+
                 Sprite sprite = Resources.Load<Sprite>(alt.img);
+
+                //if (sprite == null)
+                //{
+                //    Debug.LogError("NÃO carregou: " + alt.img);
+                //}
+                //else
+                //{
+                //    Debug.Log("Carregou: " + alt.img);
+                //}
+
                 botoes[i].image.sprite = sprite;
 
                 bool resposta = alt.correta;

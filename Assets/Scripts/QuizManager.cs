@@ -80,8 +80,10 @@ public class QuizManager : MonoBehaviour
                     }
                 }
             }
+            Debug.Log("Qtd alternativas: " + alternativas.Count);
+            int quantidade = Mathf.Min(botoes.Length, alternativas.Count);
 
-            for (int i = 0; i < botoes.Length; i++)
+            for (int i = 0; i < quantidade; i++)
             {
                 var alt = alternativas[i];
 

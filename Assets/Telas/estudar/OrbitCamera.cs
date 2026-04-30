@@ -2,57 +2,51 @@ using UnityEngine;
 
 public class OrbitCamera : MonoBehaviour
 {
-    [SerializeField] private Transform lookAtTransform;
+    [SerializeField] private Transform target;
     [SerializeField] private float sensitivity = 5f;
-    [SerializeField] private float maximumOrbitDistance = 50f;
-    [SerializeField] private float minimumOrbitDistance = 10f;
-    [SerializeField] private float defaultOrbitDistance = 25f; // Nova variável para distância inicial
+    
+    // Aumentei os limites para caber o Becker gigante
+    [SerializeField] private float minDistance = 1f;
+    [SerializeField] private float maxDistance = 500f; 
+    private float distance;
 
-    private float orbitRadius = 25f;
+    private float rotX = 0f;
+    private float rotY = 0f;
+    private bool active = true; // Começa ativo para facilitar
 
-    private bool isOrbitCameraActive = false;
-    private float mouseX = 0f;
-    private float mouseY = 0f;
-
-    private void Update()
+    void Start()
     {
-        // toggle orbit/cockpit camera
-        if (Input.GetKeyUp(KeyCode.C))
+        if (target != null)
         {
-            isOrbitCameraActive = !isOrbitCameraActive;
-
-            // reset everything if deactivated
-            if (!isOrbitCameraActive)
-            {
-                transform.SetPositionAndRotation(Vector3.zero, Quaternion.identity);
-                transform.rotation = Quaternion.identity;
-            }
-            else
-            {
-                // Agora usa o valor que você definir no Inspector
-                orbitRadius = defaultOrbitDistance;
-            }
+            // 1. Calcula a distância atual que você deixou na cena
+            distance = Vector3.Distance(transform.position, target.position);
+            
+            // 2. Ajusta os ângulos iniciais para a câmera não dar um "pulo"
+            Vector3 angles = transform.eulerAngles;
+            rotX = angles.y;
+            rotY = angles.x;
         }
+    }
 
-        if (isOrbitCameraActive)
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.C)) active = !active;
+
+        if (active && target != null)
         {
-            // only orbit when left mousebutton is down
             if (Input.GetMouseButton(0))
             {
-                // lookat target
-                transform.LookAt(lookAtTransform);
-
-                // convert mouse axis to rotation
-                mouseX = Input.GetAxis("Mouse X");
-                mouseY = Input.GetAxis("Mouse Y");
-                transform.eulerAngles += new Vector3(-mouseY * sensitivity, mouseX * sensitivity, 0);
+                rotX += Input.GetAxis("Mouse X") * sensitivity;
+                rotY -= Input.GetAxis("Mouse Y") * sensitivity;
+                rotY = Mathf.Clamp(rotY, -80f, 80f);
             }
 
-            // calc and clamp orbit radius and apply it to camera
-            orbitRadius -= Input.mouseScrollDelta.y / sensitivity;
-            orbitRadius = Mathf.Clamp(orbitRadius, minimumOrbitDistance, maximumOrbitDistance);
+            distance -= Input.mouseScrollDelta.y * 0.5f; // Zoom mais rápido
+            distance = Mathf.Clamp(distance, minDistance, maxDistance);
 
-            transform.position = lookAtTransform.position - transform.forward * orbitRadius;
+            Quaternion rotation = Quaternion.Euler(rotY, rotX, 0);
+            transform.rotation = rotation;
+            transform.position = target.position - (rotation * Vector3.forward * distance);
         }
     }
 }

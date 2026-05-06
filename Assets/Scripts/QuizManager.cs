@@ -125,10 +125,10 @@ public class QuizManager : MonoBehaviour
         }
 
         // opcional: bloquear clique depois
-        foreach (Button b in botoes)
-        {
-            b.interactable = false;
-        }
+        //foreach (Button b in botoes)
+        //{
+        //    b.interactable = false;
+        //}
 
         // próxima pergunta depois de 1.5s
         Invoke("ProximaPergunta", 1.5f);

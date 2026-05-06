@@ -105,20 +105,41 @@ public class QuizManager : MonoBehaviour
                 bool resposta = alt.correta;
 
                 botoes[i].onClick.RemoveAllListeners();
-                botoes[i].onClick.AddListener(() => VerificarResposta(resposta));
+                Button botaoAtual = botoes[i];
+                botoes[i].onClick.AddListener(() => VerificarResposta(botaoAtual, resposta));
             }
         }
     }
 
-    void VerificarResposta(bool correta)
+    void VerificarResposta(Button botaoClicado, bool correta)
     {
         if (correta)
         {
             Debug.Log("ACERTOU!");
+            botaoClicado.image.color = Color.green;
         }
         else
         {
             Debug.Log("ERROU!");
+            botaoClicado.image.color = Color.red;
+        }
+
+        // opcional: bloquear clique depois
+        foreach (Button b in botoes)
+        {
+            b.interactable = false;
+        }
+
+        // próxima pergunta depois de 1.5s
+        Invoke("ProximaPergunta", 1.5f);
+    }
+
+    void ProximaPergunta()
+    {
+        foreach (Button b in botoes)
+        {
+            b.image.color = Color.white;
+            b.interactable = true;
         }
 
         CarregarPergunta("facil");

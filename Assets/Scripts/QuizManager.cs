@@ -5,18 +5,22 @@ using Mono.Data.Sqlite;
 using System.Data;
 using System.IO;
 using System.Collections.Generic;
+using System.Linq;
 
 public class QuizManager : MonoBehaviour
 {
+    [Header("UI")]
     public TMP_Text textoPergunta;
-
-    public Button[] botoes; 
+    public Button[] botoes;
 
     private string caminhoDB;
+
+    private List<int> perguntasUsadas = new List<int>();
 
     void Start()
     {
         string nomeBanco = "QuimiTec.db";
+
         string caminhoOrigem = Path.Combine(Application.streamingAssetsPath, nomeBanco);
         string caminhoDestino = Path.Combine(Application.persistentDataPath, nomeBanco);
 
@@ -34,13 +38,18 @@ public class QuizManager : MonoBehaviour
             conexao.Open();
 
             int idPergunta = -1;
-            string texto = "";
+            string perguntaTexto = "";
 
             using (var comando = conexao.CreateCommand())
             {
-                comando.CommandText = @"
+                string idsUsados = perguntasUsadas.Count > 0
+                    ? string.Join(",", perguntasUsadas)
+                    : "0";
+
+                comando.CommandText = $@"
                 SELECT * FROM Perguntas
                 WHERE dificuldade = @dif
+                AND id NOT IN ({idsUsados})
                 ORDER BY RANDOM()
                 LIMIT 1;";
 
@@ -51,21 +60,53 @@ public class QuizManager : MonoBehaviour
                     if (leitor.Read())
                     {
                         idPergunta = int.Parse(leitor["id"].ToString());
-                        texto = leitor["texto"].ToString();
+                        perguntaTexto = leitor["texto"].ToString();
                     }
                 }
             }
 
-            textoPergunta.text = texto;
+            if (idPergunta == -1)
+            {
+                Debug.Log("Todas as perguntas já foram usadas!");
+                return;
+            }
 
-            List<(string img, bool correta)> alternativas = new List<(string, bool)>();
+            perguntasUsadas.Add(idPergunta);
+
+            textoPergunta.text = perguntaTexto;
+
+            List<(string img, bool correta)> alternativas =
+                new List<(string, bool)>();
 
             using (var comando = conexao.CreateCommand())
             {
                 comando.CommandText = @"
                 SELECT * FROM Alternativas
                 WHERE pergunta_id = @id
-                ORDER BY RANDOM();";
+                AND correta = 1
+                LIMIT 1;";
+
+                comando.Parameters.Add(new SqliteParameter("@id", idPergunta));
+
+                using (IDataReader leitor = comando.ExecuteReader())
+                {
+                    if (leitor.Read())
+                    {
+                        string img = leitor["imagem_path"].ToString();
+
+                        alternativas.Add((img, true));
+                    }
+                }
+            }
+
+            using (var comando = conexao.CreateCommand())
+            {
+                comando.CommandText = @"
+                SELECT * FROM Alternativas
+                WHERE pergunta_id = @id
+                AND correta = 0
+                ORDER BY RANDOM()
+                LIMIT 3;";
 
                 comando.Parameters.Add(new SqliteParameter("@id", idPergunta));
 
@@ -74,11 +115,20 @@ public class QuizManager : MonoBehaviour
                     while (leitor.Read())
                     {
                         string img = leitor["imagem_path"].ToString();
-                        bool correta = int.Parse(leitor["correta"].ToString()) == 1;
 
-                        alternativas.Add((img, correta));
+                        alternativas.Add((img, false));
                     }
                 }
+            }
+
+            alternativas = alternativas
+                .OrderBy(x => Random.value)
+                .ToList();
+
+            foreach (Button b in botoes)
+            {
+                b.image.color = Color.white;
+                b.interactable = true;
             }
 
             int quantidade = Mathf.Min(botoes.Length, alternativas.Count);
@@ -87,26 +137,28 @@ public class QuizManager : MonoBehaviour
             {
                 var alt = alternativas[i];
 
-                //Debug.Log("Tentando carregar: " + alt.img);
+                Debug.Log("Tentando carregar: " + alt.img);
 
                 Sprite sprite = Resources.Load<Sprite>(alt.img);
 
-                //if (sprite == null)
-                //{
-                //    Debug.LogError("NÃO carregou: " + alt.img);
-                //}
-                //else
-                //{
-                //    Debug.Log("Carregou: " + alt.img);
-                //}
+                if (sprite == null)
+                {
+                    Debug.LogError("NÃO carregou: " + alt.img);
+                    continue;
+                }
+
+                Debug.Log("Carregou: " + alt.img);
 
                 botoes[i].image.sprite = sprite;
 
                 bool resposta = alt.correta;
 
-                botoes[i].onClick.RemoveAllListeners();
                 Button botaoAtual = botoes[i];
-                botoes[i].onClick.AddListener(() => VerificarResposta(botaoAtual, resposta));
+
+                botoes[i].onClick.RemoveAllListeners();
+
+                botoes[i].onClick.AddListener(() =>
+                    VerificarResposta(botaoAtual, resposta));
             }
         }
     }
@@ -124,24 +176,16 @@ public class QuizManager : MonoBehaviour
             botaoClicado.image.color = Color.red;
         }
 
-        // opcional: bloquear clique depois
-        //foreach (Button b in botoes)
-        //{
-        //    b.interactable = false;
-        //}
+        foreach (Button b in botoes)
+        {
+            b.interactable = false;
+        }
 
-        // próxima pergunta depois de 1.5s
         Invoke("ProximaPergunta", 1.5f);
     }
 
     void ProximaPergunta()
     {
-        foreach (Button b in botoes)
-        {
-            b.image.color = Color.white;
-            b.interactable = true;
-        }
-
         CarregarPergunta("facil");
     }
 }

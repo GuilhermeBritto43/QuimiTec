@@ -92,40 +92,48 @@ public class SQLiteManager : MonoBehaviour
         using (var conexao = new SqliteConnection(caminhoDB))
         {
             conexao.Open();
+
             using (var comando = conexao.CreateCommand())
             {
                 comando.CommandText = @"
-                SELECT COUNT(*) 
-                FROM Usuarios 
-                WHERE email = @email AND senha = @senha;";
+            SELECT * 
+            FROM Usuarios 
+            WHERE email = @email AND senha = @senha;";
 
                 comando.Parameters.Add(new SqliteParameter("@email", email));
                 comando.Parameters.Add(new SqliteParameter("@senha", senha));
 
-                int resultado = System.Convert.ToInt32(comando.ExecuteScalar());
-
-                if (resultado > 0)
+                using (IDataReader leitor = comando.ExecuteReader())
                 {
-                    Debug.Log("Login válido");
+                    if (leitor.Read())
+                    {
+                        string nome = leitor["nome"].ToString();
 
-                    if (email.EndsWith("@aluno.cps.sp.gov.br") || email == "a43")
-                    {
-                        Debug.Log("ALUNO");
-                        SceneManager.LoadScene("TelaJogarEstudar"); 
-                    }
-                    else if (email.EndsWith("@cps.sp.gov.br") || email == "p43")
-                    {
-                        Debug.Log("PROFESSOR");
-                        SceneManager.LoadScene("telaProfessor"); 
+                        DadosJogador.nome = nome;
+                        DadosJogador.email = email;
+
+                        Debug.Log("Login válido");
+                        Debug.Log("Nome do jogador: " + nome);
+
+                        if (email.EndsWith("@aluno.cps.sp.gov.br") || email == "a43")
+                        {
+                            Debug.Log("ALUNO");
+                            SceneManager.LoadScene("TelaJogarEstudar");
+                        }
+                        else if (email.EndsWith("@cps.sp.gov.br") || email == "p43")
+                        {
+                            Debug.Log("PROFESSOR");
+                            SceneManager.LoadScene("telaProfessor");
+                        }
+                        else
+                        {
+                            Debug.Log("Domínio desconhecido");
+                        }
                     }
                     else
                     {
-                        Debug.Log("Dominio desconhecido");
+                        Debug.Log("Email ou senha inválidos");
                     }
-                }
-                else
-                {
-                    Debug.Log("Email ou senha inválidos");
                 }
             }
         }

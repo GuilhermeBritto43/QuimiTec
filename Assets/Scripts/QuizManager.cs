@@ -17,8 +17,18 @@ public class QuizManager : MonoBehaviour
 
     private List<int> perguntasUsadas = new List<int>();
 
+    [Header("Pontuação")]
+    public TMP_Text textoJogador;
+    public TMP_Text textoPontuacao;
+
+    private int pontuacao = 0;
+
+    private string nomeJogador;
+
     void Start()
     {
+        nomeJogador = DadosJogador.nome;
+
         string nomeBanco = "QuimiTec.db";
 
         string caminhoOrigem = Path.Combine(Application.streamingAssetsPath, nomeBanco);
@@ -27,6 +37,8 @@ public class QuizManager : MonoBehaviour
         File.Copy(caminhoOrigem, caminhoDestino, true);
 
         caminhoDB = "URI=file:" + caminhoDestino;
+
+        AtualizarUI();
 
         CarregarPergunta("facil");
     }
@@ -168,7 +180,12 @@ public class QuizManager : MonoBehaviour
         if (correta)
         {
             Debug.Log("ACERTOU!");
+
             botaoClicado.image.color = Color.green;
+
+            pontuacao += 10;
+
+            AtualizarUI();
         }
         else
         {
@@ -187,5 +204,11 @@ public class QuizManager : MonoBehaviour
     void ProximaPergunta()
     {
         CarregarPergunta("facil");
+    }
+
+    void AtualizarUI()
+    {
+        textoJogador.text = "Jogador: " + nomeJogador;
+        textoPontuacao.text = "Pontos: " + pontuacao;
     }
 }

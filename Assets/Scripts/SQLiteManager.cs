@@ -13,7 +13,7 @@ public class SQLiteManager : MonoBehaviour
     void Start()
     {
         caminhoDB = DatabaseManager.CaminhoDB;
-
+        Debug.Log(Application.persistentDataPath);
         AtualizarEstruturaBanco();
     }
 

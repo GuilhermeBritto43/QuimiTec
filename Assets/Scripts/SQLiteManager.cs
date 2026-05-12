@@ -12,17 +12,9 @@ public class SQLiteManager : MonoBehaviour
 
     void Start()
     {
-        string nomeBanco = "QuimiTec.db";
-        string caminhoOrigem = Path.Combine(Application.streamingAssetsPath, nomeBanco);
-        string caminhoDestino = Path.Combine(Application.persistentDataPath, nomeBanco);
+        caminhoDB = DatabaseManager.CaminhoDB;
 
-        if (!File.Exists(caminhoDestino))
-        {
-            File.Copy(caminhoOrigem, caminhoDestino);
-        }
-
-        caminhoDB = "URI=file:" + caminhoDestino;
-        Debug.Log(caminhoDestino);
+        AtualizarEstruturaBanco();
     }
 
     public void AdicionarAluno(string nome, string email, string senha)
@@ -101,6 +93,32 @@ public class SQLiteManager : MonoBehaviour
         }
     }
 
+    void AtualizarEstruturaBanco()
+    {
+        using (var conexao = new SqliteConnection(caminhoDB))
+        {
+            conexao.Open();
+
+            using (var comando = conexao.CreateCommand())
+            {
+                comando.CommandText = @"
+            ALTER TABLE Usuarios
+            ADD COLUMN recorde INTEGER DEFAULT 0;
+            ";
+
+                try
+                {
+                    comando.ExecuteNonQuery();
+                    Debug.Log("Coluna recorde adicionada!");
+                }
+                catch
+                {
+                    Debug.Log("Coluna recorde já existe.");
+                }
+            }
+        }
+    }
+
     public void ValidarLogin(string email, string senha)
     {
         using (var conexao = new SqliteConnection(caminhoDB))
@@ -122,9 +140,11 @@ public class SQLiteManager : MonoBehaviour
                     if (leitor.Read())
                     {
                         string nome = leitor["nome"].ToString();
+                        int recorde = int.Parse(leitor["recorde"].ToString());
 
                         DadosJogador.nome = nome;
                         DadosJogador.email = email;
+                        DadosJogador.recorde = recorde;
 
                         Debug.Log("Login válido");
                         Debug.Log("Nome do jogador: " + nome);

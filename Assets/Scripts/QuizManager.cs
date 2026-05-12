@@ -9,6 +9,13 @@ using System.Linq;
 
 public class QuizManager : MonoBehaviour
 {
+    [Header("Fim de jogo")]
+    public GameObject painelFimJogo;
+
+    public TMP_Text textoNomeFinal;
+    public TMP_Text textoPontosFinal;
+    public TMP_Text textoRecordeFinal;
+
     [Header("UI")]
     public TMP_Text textoPergunta;
     public Button[] botoes;
@@ -27,16 +34,9 @@ public class QuizManager : MonoBehaviour
 
     void Start()
     {
+        caminhoDB = DatabaseManager.CaminhoDB;
+
         nomeJogador = DadosJogador.nome;
-
-        string nomeBanco = "QuimiTec.db";
-
-        string caminhoOrigem = Path.Combine(Application.streamingAssetsPath, nomeBanco);
-        string caminhoDestino = Path.Combine(Application.persistentDataPath, nomeBanco);
-
-        File.Copy(caminhoOrigem, caminhoDestino, true);
-
-        caminhoDB = "URI=file:" + caminhoDestino;
 
         AtualizarUI();
 
@@ -79,7 +79,7 @@ public class QuizManager : MonoBehaviour
 
             if (idPergunta == -1)
             {
-                Debug.Log("Todas as perguntas já foram usadas!");
+                FinalizarJogo();
                 return;
             }
 
@@ -210,5 +210,54 @@ public class QuizManager : MonoBehaviour
     {
         textoJogador.text = "Jogador: " + nomeJogador;
         textoPontuacao.text = "Pontos: " + pontuacao;
+    }
+
+    void FinalizarJogo()
+    {
+        if (pontuacao > DadosJogador.recorde)
+        {
+            DadosJogador.recorde = pontuacao;
+
+            AtualizarRecordeNoBanco();
+        }
+
+        painelFimJogo.SetActive(true);
+
+        textoNomeFinal.text =
+            "Jogador: " + DadosJogador.nome;
+
+        textoPontosFinal.text =
+            "Pontuação: " + pontuacao;
+
+        textoRecordeFinal.text =
+            "Recorde: " + DadosJogador.recorde;
+    }
+
+    void AtualizarRecordeNoBanco()
+    {
+        using (var conexao = new SqliteConnection(caminhoDB))
+        {
+            conexao.Open();
+
+            using (var comando = conexao.CreateCommand())
+            {
+                comando.CommandText = @"
+            UPDATE Usuarios
+            SET recorde = @recorde
+            WHERE email = @email;";
+
+                comando.Parameters.Add(
+                    new SqliteParameter(
+                        "@recorde",
+                        DadosJogador.recorde));
+
+                comando.Parameters.Add(
+                    new SqliteParameter(
+                        "@email",
+                        DadosJogador.email));
+
+                comando.ExecuteNonQuery();
+            }
+        }
     }
 }

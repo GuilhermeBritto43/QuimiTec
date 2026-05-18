@@ -16,6 +16,11 @@ public class QuizManager : MonoBehaviour
     public TMP_Text textoPontosFinal;
     public TMP_Text textoRecordeFinal;
 
+    [Header("Dica")]
+    public GameObject painelDica;
+    public TMP_Text textoDica;
+    private string dicaAtual;
+
     [Header("UI")]
     public TMP_Text textoPergunta;
     public Button[] botoes;
@@ -51,6 +56,7 @@ public class QuizManager : MonoBehaviour
 
             int idPergunta = -1;
             string perguntaTexto = "";
+            string dica = "";
 
             using (var comando = conexao.CreateCommand())
             {
@@ -73,7 +79,9 @@ public class QuizManager : MonoBehaviour
                     {
                         idPergunta = int.Parse(leitor["id"].ToString());
                         perguntaTexto = leitor["texto"].ToString();
+                        dica = leitor["dicas"].ToString();
                     }
+                    dicaAtual = dica;
                 }
             }
 
@@ -199,6 +207,18 @@ public class QuizManager : MonoBehaviour
         }
 
         Invoke("ProximaPergunta", 1.5f);
+    }
+
+    public void MostrarDica()
+    {
+        painelDica.SetActive(true);
+
+        textoDica.text = dicaAtual;
+    }
+
+    public void FecharDica()
+    {
+        painelDica.SetActive(false);
     }
 
     void ProximaPergunta()

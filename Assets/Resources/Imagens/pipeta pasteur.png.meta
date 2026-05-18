@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 304fb697ae6caf64fba069481a55fafe
+guid: cd6ef187bc54ed1438c4d652bf3b55aa
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1097385667439962530
-    second: nacl_0
+      213: -4830153193880450878
+    second: pipeta pasteur_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: nacl_0
+      name: pipeta pasteur_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 216
-        height: 233
+        width: 920
+        height: 920
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2a92d594372ba3f00800000000000000
-      internalID: 1097385667439962530
+      spriteID: 2c8890ce249d7fcb0800000000000000
+      internalID: -4830153193880450878
       vertices: []
       indices: 
       edges: []
@@ -161,7 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      nacl_0: 1097385667439962530
+      pipeta pasteur_0: -4830153193880450878
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -180,5 +180,9 @@ public class SQLiteManager : MonoBehaviour
     {
         Popup.SetActive(true);
     }
+    public void FecharPopup()
+    {
+        Popup.SetActive(false);
+    }
     
 }

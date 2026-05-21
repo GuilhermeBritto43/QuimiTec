@@ -16,6 +16,7 @@ public class SQLiteManager : MonoBehaviour
     {
         caminhoDB = DatabaseManager.CaminhoDB;
         Debug.Log(Application.persistentDataPath);
+        Debug.Log("aaaa " + caminhoDB);
         AtualizarEstruturaBanco();
     }
 

@@ -61,6 +61,6 @@ Projeto desenvolvido em parceria com a **ETEC Júlio de Mesquita**, com foco na 
 | Giulia Zaparolli Passiani
 | Guilherme Britto Tavares dos Santos
 | Marcos de Salles Prado
-| Sofia Roschel Gaspar
+| Sofia Gaspar Roschel Bueno
 
 ---

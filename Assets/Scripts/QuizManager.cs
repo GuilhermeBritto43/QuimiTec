@@ -33,7 +33,7 @@ public class QuizManager : MonoBehaviour
 
     [Header("Dificuldade")]
     public TMP_Text textoDificuldade;
-
+    private int acertosNivel = 0;
     private string caminhoDB;
 
     private int pontuacao = 0;
@@ -131,36 +131,13 @@ public class QuizManager : MonoBehaviour
 
             if (idPergunta == -1)
             {
-                if (dificuldadeAtual == "facil")
-                {
-                    dificuldadeAtual = "medio";
+                Debug.Log(
+                    "Não existem mais perguntas de " +
+                    dificuldadeAtual);
 
-                    AtualizarUI();
+                FinalizarJogo();
 
-                    Debug.Log("INDO PARA MÉDIAS");
-
-                    CarregarPergunta();
-
-                    return;
-                }
-                else if (dificuldadeAtual == "medio")
-                {
-                    dificuldadeAtual = "dificil";
-
-                    AtualizarUI();
-
-                    Debug.Log("INDO PARA DIFÍCEIS");
-
-                    CarregarPergunta();
-
-                    return;
-                }
-                else
-                {
-                    FinalizarJogo();
-
-                    return;
-                }
+                return;
             }
 
             perguntasUsadas.Add(idPergunta);
@@ -170,7 +147,6 @@ public class QuizManager : MonoBehaviour
             List<(string img, bool correta)> alternativas =
                 new List<(string, bool)>();
 
-            // PEGA A CORRETA
             using (var comando = conexao.CreateCommand())
             {
                 comando.CommandText = @"
@@ -198,7 +174,6 @@ public class QuizManager : MonoBehaviour
                 }
             }
 
-            // PEGA AS ERRADAS
             using (var comando = conexao.CreateCommand())
             {
                 comando.CommandText = @"
@@ -296,12 +271,15 @@ public class QuizManager : MonoBehaviour
         {
             Debug.Log("ACERTOU!");
 
-            botaoClicado.image.color =
-                Color.green;
+            botaoClicado.image.color = Color.green;
 
             pontuacao += 10;
 
+            acertosNivel++;
+
             AtualizarUI();
+
+            VerificarMudancaDeNivel();
         }
         else
         {
@@ -428,5 +406,36 @@ public class QuizManager : MonoBehaviour
         Debug.Log("FECHANDO JOGO");
 
         Application.Quit();
+    }
+
+    void VerificarMudancaDeNivel()
+    {
+        if (acertosNivel < 5)
+            return;
+
+        acertosNivel = 0;
+
+        if (dificuldadeAtual == "facil")
+        {
+            dificuldadeAtual = "medio";
+
+            Debug.Log("SUBIU PARA MÉDIO");
+
+            AtualizarUI();
+        }
+        else if (dificuldadeAtual == "medio")
+        {
+            dificuldadeAtual = "dificil";
+
+            Debug.Log("SUBIU PARA DIFÍCIL");
+
+            AtualizarUI();
+        }
+        else
+        {
+            Debug.Log("JOGO CONCLUÍDO");
+
+            FinalizarJogo();
+        }
     }
 }

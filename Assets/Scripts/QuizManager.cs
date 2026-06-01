@@ -6,6 +6,7 @@ using System.Data;
 using System.IO;
 using System.Collections.Generic;
 using System.Linq;
+using UnityEngine.SceneManagement;
 
 public class QuizManager : MonoBehaviour
 {
@@ -402,5 +403,30 @@ public class QuizManager : MonoBehaviour
                 comando.ExecuteNonQuery();
             }
         }
+    }
+
+    public void ReiniciarJogo()
+    {
+        SceneManager.LoadScene(
+            SceneManager.GetActiveScene().name);
+    }
+
+    public void VoltarTelaInicial()
+    {
+        if (DadosJogador.tipoUsuario == "professor")
+        {
+            SceneManager.LoadScene("TelaProfessor");
+        }
+        else
+        {
+            SceneManager.LoadScene("TelaAluno");
+        }
+    }
+
+    public void FecharJogo()
+    {
+        Debug.Log("FECHANDO JOGO");
+
+        Application.Quit();
     }
 }

@@ -9,11 +9,14 @@ public class SQLiteManager : MonoBehaviour
 {
     private string caminhoDB;
     public TMP_Text textoListaAlunos;
+    public GameObject Popup;
+
 
     void Start()
     {
         caminhoDB = DatabaseManager.CaminhoDB;
         Debug.Log(Application.persistentDataPath);
+        Debug.Log("aaaa " + caminhoDB);
         AtualizarEstruturaBanco();
     }
 
@@ -162,14 +165,25 @@ public class SQLiteManager : MonoBehaviour
                         else
                         {
                             Debug.Log("Domínio desconhecido");
+                            MostrarPopup();
                         }
                     }
                     else
                     {
                         Debug.Log("Email ou senha inválidos");
+                        MostrarPopup();
                     }
                 }
             }
         }
     }
+    public void MostrarPopup()
+    {
+        Popup.SetActive(true);
+    }
+    public void FecharPopup()
+    {
+        Popup.SetActive(false);
+    }
+    
 }

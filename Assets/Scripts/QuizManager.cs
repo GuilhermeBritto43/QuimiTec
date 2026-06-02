@@ -391,7 +391,8 @@ public class QuizManager : MonoBehaviour
 
     public void VoltarTelaInicial()
     {
-        if (DadosJogador.tipoUsuario == "professor")
+        Debug.Log("434343434343434343434343" + DadosJogador.tipoUsuario);
+        if (DadosJogador.tipoUsuario == "Professor")
         {
             SceneManager.LoadScene("telaProfessor");
         }

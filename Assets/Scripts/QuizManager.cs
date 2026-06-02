@@ -393,11 +393,11 @@ public class QuizManager : MonoBehaviour
     {
         if (DadosJogador.tipoUsuario == "professor")
         {
-            SceneManager.LoadScene("TelaProfessor");
+            SceneManager.LoadScene("telaProfessor");
         }
         else
         {
-            SceneManager.LoadScene("TelaAluno");
+            SceneManager.LoadScene("TelaJogarEstudar");
         }
     }
 

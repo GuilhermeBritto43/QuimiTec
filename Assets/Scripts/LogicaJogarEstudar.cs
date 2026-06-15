@@ -4,7 +4,7 @@ public class TelaJogarManager : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public void Estudar(){
-        SceneManager.LoadScene("estudar");
+        SceneManager.LoadScene("InspectItemsAndObjects");
     }
     public void Jogar(){
         SceneManager.LoadScene("Jogo");

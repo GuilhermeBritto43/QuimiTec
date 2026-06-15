@@ -17,7 +17,7 @@ public class Item3DViewer : MonoBehaviour, IDragHandler {
         if (itemPrefab != null) {
             Destroy(itemPrefab.gameObject);
         }
-        itemPrefab = Instantiate(itemSO.prefab, new Vector3(1000, 1000, 1000), Quaternion.identity);
+        itemPrefab = Instantiate(itemSO.prefab, new Vector3(1000, 1000, 1000), Quaternion.Euler(-90, 0, 0));
     }
 
     public void OnDrag(PointerEventData eventData) {

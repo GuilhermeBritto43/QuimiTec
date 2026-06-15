@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: e1633b4dabf0a034791fa541432649c1
+guid: fdde6cf3d992743498036c7c553e98e5
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5200813651382904749
-    second: capsula de porcelana_0
+      213: 1686528864772200460
+    second: baseUniversal_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: capsula de porcelana_0
+      name: baseUniversal_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 250
-        height: 250
+        width: 1080
+        height: 1080
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: da72ea9f5700d2840800000000000000
-      internalID: 5200813651382904749
+      spriteID: c0890302111c76710800000000000000
+      internalID: 1686528864772200460
       vertices: []
       indices: 
       edges: []
@@ -161,7 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      capsula de porcelana_0: 5200813651382904749
+      baseUniversal_0: 1686528864772200460
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

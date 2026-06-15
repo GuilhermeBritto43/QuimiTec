@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 2f5279eaeb4583f4a8fa48cd3cffc9b5
+guid: 0dadf9262bf70224b8502b141de0e78f
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6661841535182052423
-    second: placa de petri_0
+      213: -6156054524327601089
+    second: Condensador_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: placa de petri_0
+      name: Condensador_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 980
-        height: 980
+        width: 1080
+        height: 1080
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9b3e7817b626c83a0800000000000000
-      internalID: -6661841535182052423
+      spriteID: f3c548bb60d419aa0800000000000000
+      internalID: -6156054524327601089
       vertices: []
       indices: 
       edges: []
@@ -161,7 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      placa de petri_0: -6661841535182052423
+      Condensador_0: -6156054524327601089
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

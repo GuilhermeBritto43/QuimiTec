@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 2c60999f1e5779e429be5d420d620bd5
+guid: 862769e7c97c118478be2f8155f62920
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5140904071431618949
-    second: proveta_0
+      213: 2377523332524877335
+    second: proveta_correta_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: proveta_0
+      name: proveta_correta_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 650
-        height: 650
+        width: 1080
+        height: 1080
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5818a0ae309285740800000000000000
-      internalID: 5140904071431618949
+      spriteID: 7162950dfd8aef020800000000000000
+      internalID: 2377523332524877335
       vertices: []
       indices: 
       edges: []
@@ -161,7 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      proveta_0: 5140904071431618949
+      proveta_correta_0: 2377523332524877335
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: cd6ef187bc54ed1438c4d652bf3b55aa
+guid: a532116246df9b8409205ed5eca146e2
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4830153193880450878
-    second: pipeta pasteur_0
+      213: -1119283017830355285
+    second: Tela de Amianto_Ceramica_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: pipeta pasteur_0
+      name: Tela de Amianto_Ceramica_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 920
-        height: 920
+        width: 1080
+        height: 1080
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2c8890ce249d7fcb0800000000000000
-      internalID: -4830153193880450878
+      spriteID: bae281786028770f0800000000000000
+      internalID: -1119283017830355285
       vertices: []
       indices: 
       edges: []
@@ -161,7 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      pipeta pasteur_0: -4830153193880450878
+      Tela de Amianto_Ceramica_0: -1119283017830355285
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

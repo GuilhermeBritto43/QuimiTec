@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 789d30580c8c89f4bb9fae4984a2ddda
+guid: 8c69594a80c80cd4291a266c01456e0c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5998194242301805344
-    second: funil analitico_0
+      213: 1942802886550821092
+    second: BicoDebusen_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: funil analitico_0
+      name: BicoDebusen_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 980
-        height: 980
+        width: 1080
+        height: 1080
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 023413232eddd3350800000000000000
-      internalID: 5998194242301805344
+      spriteID: 4e817719ee836fa10800000000000000
+      internalID: 1942802886550821092
       vertices: []
       indices: 
       edges: []
@@ -161,7 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      funil analitico_0: 5998194242301805344
+      BicoDebusen_0: 1942802886550821092
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

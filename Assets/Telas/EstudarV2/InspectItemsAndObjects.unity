@@ -1505,6 +1505,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemList:
   - {fileID: 11400000, guid: e568d7bceeca19541981ac7f14074275, type: 2}
+  - {fileID: 11400000, guid: 5fad2d95e7424b64a877be0fd8d42c4b, type: 2}
+  - {fileID: 11400000, guid: a4b63fe589860c249b151ebcc1eed6e1, type: 2}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

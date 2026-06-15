@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3fa1bf716b1ab95429029b2d6f02b60a, type: 3}
-  m_Name: bekcer
+  m_Name: Tela de Amianto_Ceramica
   m_EditorClassIdentifier: Assembly-CSharp::ItemSO
-  sprite: {fileID: -2091947941156686459, guid: 60156a1408d1a2f48b996420e09c5278, type: 3}
-  prefab: {fileID: -8679921383154817045, guid: 7c442c0d942dd6742aee71dae47c59cd, type: 3}
+  sprite: {fileID: -1119283017830355285, guid: ea3e9d1a0eed347469350ec5fb5fe348, type: 3}
+  prefab: {fileID: -8679921383154817045, guid: 5f53ae353284a2049b85a68fdae7dfe6, type: 3}

@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3fa1bf716b1ab95429029b2d6f02b60a, type: 3}
-  m_Name: bekcer
+  m_Name: pipeta
   m_EditorClassIdentifier: Assembly-CSharp::ItemSO
-  sprite: {fileID: -2091947941156686459, guid: 60156a1408d1a2f48b996420e09c5278, type: 3}
-  prefab: {fileID: -8679921383154817045, guid: 7c442c0d942dd6742aee71dae47c59cd, type: 3}
+  sprite: {fileID: 3942998407665621327, guid: c93eb02e0d822fc41a579f3079e2e2a4, type: 3}
+  prefab: {fileID: -8679921383154817045, guid: 57f681ef3d550c6458ac165ab9429739, type: 3}

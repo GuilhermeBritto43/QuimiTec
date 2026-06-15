@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3fa1bf716b1ab95429029b2d6f02b60a, type: 3}
-  m_Name: bekcer
+  m_Name: erlenmeyer
   m_EditorClassIdentifier: Assembly-CSharp::ItemSO
-  sprite: {fileID: -2091947941156686459, guid: 60156a1408d1a2f48b996420e09c5278, type: 3}
-  prefab: {fileID: -8679921383154817045, guid: 7c442c0d942dd6742aee71dae47c59cd, type: 3}
+  sprite: {fileID: -5060491490172801850, guid: 9fd5219fc98c15f4ca2e2ffb7dffdc80, type: 3}
+  prefab: {fileID: -8679921383154817045, guid: afde42d395d85894f9c52263a8c46e38, type: 3}

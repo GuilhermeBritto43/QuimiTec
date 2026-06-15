@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 6d9811c9b0af611449500a837213bfbe
+guid: 03c2ec43ea6509249b5a34bc7b62d0c9
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3801366921928229139
-    second: termometro_0
+      213: -3431790351934448873
+    second: Funil AnaliticoComum_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: termometro_0
+      name: Funil AnaliticoComum_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 360
-        height: 360
+        width: 1080
+        height: 1080
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: dee3c8dcce4de3bc0800000000000000
-      internalID: -3801366921928229139
+      spriteID: 71b95597bd4df50d0800000000000000
+      internalID: -3431790351934448873
       vertices: []
       indices: 
       edges: []
@@ -161,7 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      termometro_0: -3801366921928229139
+      Funil AnaliticoComum_0: -3431790351934448873
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: a2f162347caddb341a70b5b2448942a8
+guid: b0989b5fb30376b4bb3aea2a3951a24d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6275360564850511045
-    second: bastao de vidro_0
+      213: 3942998407665621327
+    second: pipeta_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: bastao de vidro_0
+      name: pipeta_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 300
-        height: 300
+        width: 1080
+        height: 1080
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5ccc8697f2f861750800000000000000
-      internalID: 6275360564850511045
+      spriteID: f4917de292858b630800000000000000
+      internalID: 3942998407665621327
       vertices: []
       indices: 
       edges: []
@@ -161,7 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      bastao de vidro_0: 6275360564850511045
+      pipeta_0: 3942998407665621327
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

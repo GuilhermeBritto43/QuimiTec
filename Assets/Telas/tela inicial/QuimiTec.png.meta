@@ -1,0 +1,533 @@
+fileFormatVersion: 2
+guid: 51de6f4b964e4d7459ff6d11165f220e
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 361814921541018390
+    second: QuimiTec_0
+  - first:
+      213: -4438184154877888354
+    second: QuimiTec_1
+  - first:
+      213: 7566132939073545319
+    second: QuimiTec_2
+  - first:
+      213: 6414069960763332370
+    second: QuimiTec_3
+  - first:
+      213: -6150764930212067201
+    second: QuimiTec_4
+  - first:
+      213: 8567069537904772290
+    second: QuimiTec_5
+  - first:
+      213: 6256940166861933769
+    second: QuimiTec_6
+  - first:
+      213: 9175289835430351715
+    second: QuimiTec_7
+  - first:
+      213: -8735259681721636046
+    second: QuimiTec_8
+  - first:
+      213: 4121674139410755962
+    second: QuimiTec_9
+  - first:
+      213: 1847419181143324363
+    second: QuimiTec_10
+  - first:
+      213: -7182493552408360618
+    second: QuimiTec_11
+  - first:
+      213: -8065792150372844677
+    second: QuimiTec_12
+  - first:
+      213: -8329304415750361205
+    second: QuimiTec_13
+  - first:
+      213: 7713320094843233730
+    second: QuimiTec_14
+  - first:
+      213: -4652760223825721018
+    second: QuimiTec_15
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: QuimiTec_0
+      rect:
+        serializedVersion: 2
+        x: 324
+        y: 519
+        width: 349
+        height: 322
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 61363e011cc650500800000000000000
+      internalID: 361814921541018390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: QuimiTec_1
+      rect:
+        serializedVersion: 2
+        x: 367
+        y: 415
+        width: 272
+        height: 341
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e987cb096076862c0800000000000000
+      internalID: -4438184154877888354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: QuimiTec_2
+      rect:
+        serializedVersion: 2
+        x: 558
+        y: 412
+        width: 222
+        height: 221
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7646cdc22dd400960800000000000000
+      internalID: 7566132939073545319
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: QuimiTec_3
+      rect:
+        serializedVersion: 2
+        x: 183
+        y: 263
+        width: 128
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2175dc765aa530950800000000000000
+      internalID: 6414069960763332370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: QuimiTec_4
+      rect:
+        serializedVersion: 2
+        x: 311
+        y: 271
+        width: 85
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f7887c552e714aaa0800000000000000
+      internalID: -6150764930212067201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: QuimiTec_5
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 355
+        width: 34
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c442ecba5854e670800000000000000
+      internalID: 8567069537904772290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: QuimiTec_6
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 271
+        width: 34
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9cccdaa5eed15d650800000000000000
+      internalID: 6256940166861933769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: QuimiTec_7
+      rect:
+        serializedVersion: 2
+        x: 438
+        y: 271
+        width: 124
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 36314181e7d255f70800000000000000
+      internalID: 9175289835430351715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: QuimiTec_8
+      rect:
+        serializedVersion: 2
+        x: 573
+        y: 355
+        width: 31
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 23ba032d99f16c680800000000000000
+      internalID: -8735259681721636046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: QuimiTec_9
+      rect:
+        serializedVersion: 2
+        x: 573
+        y: 271
+        width: 28
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a71fd7fcac0233930800000000000000
+      internalID: 4121674139410755962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: QuimiTec_10
+      rect:
+        serializedVersion: 2
+        x: 603
+        y: 271
+        width: 98
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bc67a4b05f953a910800000000000000
+      internalID: 1847419181143324363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: QuimiTec_11
+      rect:
+        serializedVersion: 2
+        x: 674
+        y: 267
+        width: 92
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6598a272b28a25c90800000000000000
+      internalID: -7182493552408360618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: QuimiTec_12
+      rect:
+        serializedVersion: 2
+        x: 762
+        y: 267
+        width: 79
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7b74ec06cc801090800000000000000
+      internalID: -8065792150372844677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: QuimiTec_13
+      rect:
+        serializedVersion: 2
+        x: 319
+        y: 223
+        width: 170
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b8f6b11b3cd586c80800000000000000
+      internalID: -8329304415750361205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: QuimiTec_14
+      rect:
+        serializedVersion: 2
+        x: 490
+        y: 213
+        width: 47
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c5630462c73b0b60800000000000000
+      internalID: 7713320094843233730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: QuimiTec_15
+      rect:
+        serializedVersion: 2
+        x: 538
+        y: 223
+        width: 167
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6490dc15a331e6fb0800000000000000
+      internalID: -4652760223825721018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      QuimiTec_0: 361814921541018390
+      QuimiTec_1: -4438184154877888354
+      QuimiTec_10: 1847419181143324363
+      QuimiTec_11: -7182493552408360618
+      QuimiTec_12: -8065792150372844677
+      QuimiTec_13: -8329304415750361205
+      QuimiTec_14: 7713320094843233730
+      QuimiTec_15: -4652760223825721018
+      QuimiTec_2: 7566132939073545319
+      QuimiTec_3: 6414069960763332370
+      QuimiTec_4: -6150764930212067201
+      QuimiTec_5: 8567069537904772290
+      QuimiTec_6: 6256940166861933769
+      QuimiTec_7: 9175289835430351715
+      QuimiTec_8: -8735259681721636046
+      QuimiTec_9: 4121674139410755962
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

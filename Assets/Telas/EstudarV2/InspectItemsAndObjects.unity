@@ -1504,12 +1504,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemList:
-  - {fileID: 11400000, guid: 217f388bf0c0b5b45b2728e5c79eae30, type: 2}
-  - {fileID: 11400000, guid: 07d884af64f08a5469a0adfccd3be863, type: 2}
-  - {fileID: 11400000, guid: 292b6ce796ed20c4a94efb4290c7faad, type: 2}
-  - {fileID: 11400000, guid: 3d7b54d86da072b4c8b63461b72bc30d, type: 2}
-  - {fileID: 11400000, guid: 5bca4ad13863ec441876978970423c2e, type: 2}
-  - {fileID: 11400000, guid: 1dbb50765287fc943888b4b7870b038a, type: 2}
+  - {fileID: 11400000, guid: e568d7bceeca19541981ac7f14074275, type: 2}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

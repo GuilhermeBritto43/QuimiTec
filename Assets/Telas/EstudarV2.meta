@@ -1,5 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< Updated upstream
 guid: ad67ecc532db4764b852af479781a845
+=======
+<<<<<<<< Updated upstream:Assets/Telas/Estudar escolher objeto.meta
+guid: ad67ecc532db4764b852af479781a845
+========
+guid: a0a30b12a323dd84f931aa1154c2c2b4
+>>>>>>>> Stashed changes:Assets/Telas/EstudarV2.meta
+>>>>>>> Stashed changes
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

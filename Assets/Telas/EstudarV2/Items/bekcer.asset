@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fa1bf716b1ab95429029b2d6f02b60a, type: 3}
+  m_Name: bekcer
+  m_EditorClassIdentifier: Assembly-CSharp::ItemSO
+  sprite: {fileID: -2091947941156686459, guid: 60156a1408d1a2f48b996420e09c5278, type: 3}
+  prefab: {fileID: -8679921383154817045, guid: 7c442c0d942dd6742aee71dae47c59cd, type: 3}

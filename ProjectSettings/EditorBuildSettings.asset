@@ -5,7 +5,7 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
   - enabled: 1
@@ -29,6 +29,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Telas/Jogo/Jogo/Jogo.unity
     guid: 697c9a55001e21e41b2442b07c4a94cd
+  - enabled: 1
+    path: Assets/Telas/EstudarV2/InspectItemsAndObjects.unity
+    guid: 7ef91be2554f0a946b4aa810de35e5be
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

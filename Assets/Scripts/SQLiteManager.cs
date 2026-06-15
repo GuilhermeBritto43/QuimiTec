@@ -65,9 +65,8 @@ public class SQLiteManager : MonoBehaviour
                     while (leitor.Read())
                     {
                         string linha =
-                            $"ID: {leitor["id"]} | " +
                             $"Nome: {leitor["nome"]} | " +
-                            $"Email: {leitor["email"]}\n";
+                            $"Recorde: {leitor["recorde"]}\n";
 
                         textoListaAlunos.text += linha;
                     }

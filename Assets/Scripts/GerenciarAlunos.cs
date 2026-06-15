@@ -6,6 +6,7 @@ public class AlunoUI : MonoBehaviour
     public TMP_InputField inputNome;    
     public TMP_InputField inputEmail;
     public TMP_InputField inputSenha;
+    public GameObject panelListar;
 
     public SQLiteManager dbManager;
 
@@ -21,6 +22,7 @@ public class AlunoUI : MonoBehaviour
 
     public void OnClickListar()
     {
+        panelListar.SetActive(true);
         dbManager.ListarAlunos();
     }
 }

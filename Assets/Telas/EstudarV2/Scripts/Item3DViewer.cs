@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,6 +9,7 @@ public class Item3DViewer : MonoBehaviour, IDragHandler {
     [SerializeField] private DummyInventory dummyInventory;
 
     private Transform itemPrefab;
+    public String itemName;
 
     private void Start() {
         dummyInventory.OnItemSelected += DummyInventory_OnItemSelected;
@@ -18,6 +20,9 @@ public class Item3DViewer : MonoBehaviour, IDragHandler {
             Destroy(itemPrefab.gameObject);
         }
         itemPrefab = Instantiate(itemSO.prefab, new Vector3(1000, 1000, 1000), Quaternion.Euler(-90, 0, 0));
+        itemName = itemSO.name;
+        Debug.Log(itemSO.prefab);
+        Debug.Log(itemSO.name);
     }
 
     public void OnDrag(PointerEventData eventData) {
